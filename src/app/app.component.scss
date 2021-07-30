@@ -1,0 +1,17 @@
+* {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto auto auto;
+}
+
+.toolbar {
+  grid-column-end: span 2;
+}
+
+.progress {
+  grid-column-end: span 2;
+}
