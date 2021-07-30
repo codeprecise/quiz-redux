@@ -4,3 +4,5 @@ export interface Question {
   correctAnswerIndex: number;
   userAnswerIndex?: number;
 }
+
+export type AnswerState = "Correct" | "Incorrect" | "NoAnswer";

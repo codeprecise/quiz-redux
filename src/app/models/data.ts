@@ -1,4 +1,4 @@
-import { Question } from "./question.model";
+import { AnswerState, Question } from "./question.model";
 
 export const QUESTIONS: Question[] = [
   {
@@ -41,4 +41,11 @@ export const QUESTIONS: Question[] = [
     ],
     correctAnswerIndex: 2
   },
+];
+
+export const ANSWER_STATES: AnswerState[] = [
+  "Correct",
+  "Incorrect",
+  "Correct",
+  "NoAnswer",
 ];

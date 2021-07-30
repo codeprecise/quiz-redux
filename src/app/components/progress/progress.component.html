@@ -1,1 +1,11 @@
-<p>progress works!</p>
+<ng-container *ngFor="let state of answerStates$ | async; let index = index; let last = last">
+
+  <span class="separator" *ngIf="index != 0"></span>
+
+  <span class="state">
+    <mat-icon *ngIf="state == 'Correct'">done</mat-icon>
+    <mat-icon *ngIf="state == 'Incorrect'">clear</mat-icon>
+    <ng-container *ngIf="state == 'NoAnswer'">{{ index + 1 }}</ng-container>
+  </span>
+
+</ng-container>

@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  background-color: var(--p-100);
+  color: var(--pc-100);
+  margin: 4px;
+
+  border-radius: 50%;
+  border: 1px solid var(--p-700);
+}
+
+.separator {
+  flex-grow: 1;
+
+  border-top: 1px solid var(--f-divider);
+  height: 1px;
+}
