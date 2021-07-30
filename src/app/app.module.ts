@@ -8,14 +8,16 @@ import { MaterialModule } from './material.module';
 import { ProgressComponent } from './components/progress/progress.component';
 import { QuestionComponent } from './components/question/question.component';
 import { EndComponent } from './components/end/end.component';
-import { SummaryComponent } from './components/summary/summary.component'
+import { SummaryComponent } from './components/summary/summary.component';
+import { LayoutComponent } from './components/layout/layout.component'
 @NgModule({
   declarations: [
     AppComponent,
     ProgressComponent,
     QuestionComponent,
     EndComponent,
-    SummaryComponent
+    SummaryComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
