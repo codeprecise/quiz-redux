@@ -1,6 +1,6 @@
-<ng-container *ngIf="question$ | async as question">
+<mat-card *ngIf="question$ | async as question">
   <h1>{{question.question}}</h1>
-  <div *ngFor="let answer of question.answers" class="answer">
+  <ng-container *ngFor="let answer of question.answers">
     <h3>{{answer}}</h3>
-  </div>
-</ng-container>
+  </ng-container>
+</mat-card>

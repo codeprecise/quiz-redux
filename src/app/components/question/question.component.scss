@@ -1,16 +1,11 @@
-:host {
-  margin-left: 20px;
-}
-
-.answer {
-  background-color: var(--b-background);
+h3 {
   transition: all 250ms
 }
 
-.answer:hover {
+h3:hover {
   background-color: var(--b-hover);
 }
 
-.answer:active {
+h3:active {
   background-color: var(--b-selected-button);
 }

@@ -1,0 +1,13 @@
+<mat-card *ngFor="let question of answeredQuestions$ | async; let index = index"
+          [class]="question.correctAnswerIndex === question.userAnswerIndex ? 'correct' : 'incorrect'">
+  <div>
+    <h1>{{index + 1}}. {{question.question}}</h1>
+
+    You answered: {{ question.answers[question.userAnswerIndex] }}
+
+    <div *ngIf="question.correctAnswerIndex !== question.userAnswerIndex">
+      The correct answer is: {{ question.answers[question.correctAnswerIndex] }}
+    </div>
+
+  </div>
+</mat-card>

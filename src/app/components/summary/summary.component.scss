@@ -1,0 +1,14 @@
+$light-green: #c8e6c9;
+$light-red: #ffcdd2;
+
+mat-card {
+  color: black;
+}
+
+.correct {
+  background-color: $light-green;
+}
+
+.incorrect {
+  background-color: $light-red;
+}
