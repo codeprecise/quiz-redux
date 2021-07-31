@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
+import { QUESTIONS } from 'src/app/models/data';
 
 @Component({
   selector: 'app-question',
@@ -8,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionComponent implements OnInit {
 
   constructor() { }
+
+  question$ = of(QUESTIONS[0])
 
   ngOnInit(): void {
   }

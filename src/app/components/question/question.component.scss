@@ -1,0 +1,16 @@
+:host {
+  margin-left: 20px;
+}
+
+.answer {
+  background-color: var(--b-background);
+  transition: all 250ms
+}
+
+.answer:hover {
+  background-color: var(--b-hover);
+}
+
+.answer:active {
+  background-color: var(--b-selected-button);
+}
