@@ -15,14 +15,16 @@ export function currentQuestionIndex(state: AppState) {
 
 export function *getAnswerStates(state: AppState): Generator<AnswerState> {
 
-  for (let i = 0; i < state.answers.length; i++) {
+  for (let i = 0; i < state.questions.length; i++) {
 
     if (i >= state.answers.length) {
       yield "NoAnswer";
     }
+    else {
+      yield state.answers[i].isCorrect
+        ? "Correct"
+        : "Incorrect";
+    }
 
-    yield state.answers[i].isCorrect
-      ? "Correct"
-      : "Incorrect";
   }
 }

@@ -1,6 +1,8 @@
 <mat-card *ngIf="question$ | async as question">
   <h1>{{question.question}}</h1>
-  <ng-container *ngFor="let answer of question.answers">
-    <h3>{{answer}}</h3>
+  <ng-container *ngFor="let answer of question.answers; let index = index">
+    <h3 (click)="onAnswer(index)">
+      {{answer}}
+    </h3>
   </ng-container>
 </mat-card>

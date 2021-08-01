@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { of } from 'rxjs';
+import { Answer, AnswerState } from 'src/app/models/answer.model';
 import { ANSWER_STATES } from 'src/app/models/data';
+import { AppSelectors } from 'src/app/redux/app.types';
 
 @Component({
   selector: 'app-progress',
@@ -9,11 +13,16 @@ import { ANSWER_STATES } from 'src/app/models/data';
 })
 export class ProgressComponent implements OnInit {
 
-  answerStates$ = of(ANSWER_STATES);
+  answerStates$!: Observable<AnswerState[]>;
 
-  constructor() { }
+  constructor(
+    private store: Store<any>
+  ) { }
 
   ngOnInit(): void {
+    this.answerStates$ = this.store.select(
+      AppSelectors.answerStates
+    )
   }
 
 }
