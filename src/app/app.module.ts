@@ -10,6 +10,12 @@ import { QuestionComponent } from './components/question/question.component';
 import { EndComponent } from './components/end/end.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { LayoutComponent } from './components/layout/layout.component'
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { appFeatureKey } from './redux/app.state';
+import { appReducer } from './redux/app.reducers';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +29,14 @@ import { LayoutComponent } from './components/layout/layout.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    StoreModule.forRoot({
+      [appFeatureKey]: appReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      logOnly: environment.production,
+      maxAge: 50
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
-import { AnswerState, Question } from "./question.model";
+import { AnswerState } from "./answer.model";
+import { Question } from "./question.model";
 
 export const QUESTIONS: Question[] = [
   {
