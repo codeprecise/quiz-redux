@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { QUESTIONS } from 'src/app/models/data';
+import { Store } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
+import { AppSelectors } from 'src/app/redux/app.types';
+import { AnsweredQuestion } from 'src/app/models/answeredquestion.model';
 
 @Component({
   selector: 'app-summary',
@@ -8,9 +10,14 @@ import { QUESTIONS } from 'src/app/models/data';
   styleUrls: ['./summary.component.scss'],
 })
 export class SummaryComponent implements OnInit {
-  answeredQuestions$ = of(
-    QUESTIONS.map((q) => ({ ...q, userAnswerIndex: 1 }))
-  );
 
-  ngOnInit(): void {}
+  answeredQuestions$!: Observable<AnsweredQuestion[]>
+
+  constructor(private store: Store<any>) {
+  }
+
+  ngOnInit(): void {
+    this.answeredQuestions$ = this.store
+      .select(AppSelectors.answeredQuestions);
+  }
 }
